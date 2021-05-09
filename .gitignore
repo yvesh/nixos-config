@@ -1,0 +1,4 @@
+secrets
+smb-secrets
+machine.nix
+hardware-configuration.nix
