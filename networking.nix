@@ -6,7 +6,7 @@
   # Dev Hosts on all my machines
   networking.extraHosts =
     ''
-      127.0.0.3 j4 j3 j4.dev j3.dev
+      127.0.0.3 j4 j3 j4.local j3.local
     '';
 
   # The global useDHCP flag is deprecated, therefore explicitly set to false here.

@@ -31,7 +31,7 @@
         '';
     };
     j4 = {
-      serverAliases = [ "j4.dev" ];
+      serverAliases = [ "j4.local" ];
       documentRoot = "/home/bytee/srv/j4";
       extraConfig =
  ''
@@ -43,7 +43,7 @@
         '';    };
     j3 = {
       documentRoot = "/home/bytee/srv/j3";
-      serverAliases = [ "j3.dev" ];
+      serverAliases = [ "j3.local" ];
       extraConfig =
  ''
         <Directory "/home/bytee/srv/j3">
@@ -65,7 +65,7 @@
   # services.xserver.xkbOptions = "eurosign:e";
 
   # Just for services and some apps..
-  services.xserver.desktopManager.gnome3.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
 
   # Most used WMs
   services.xserver.windowManager.i3.enable = true;
@@ -103,7 +103,7 @@
   services.thermald.enable = true;
 
   # Gnome Keyring
-  services.gnome3.gnome-keyring.enable = true;
+  services.gnome.gnome-keyring.enable = true;
 
   # Emacs
   # services.emacs.enable = true;

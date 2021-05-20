@@ -14,13 +14,12 @@
      zsh
      wget
      nmap
+     tcpdump
      unzip
      git
      curl
      procps
      gnupg
-     smbclient
-     mariadb-client
      htop
      jq
      fd
@@ -29,6 +28,9 @@
      flex
      ripgrep
      ansible
+     mariadb-client
+     mongoc
+     smbclient
 
      # CLI Hardware
      acpi
@@ -36,6 +38,8 @@
      powertop
      lm_sensors
      smartmontools
+     pciutils
+     usbutils
 
      # CLI other
      weechat
@@ -48,6 +52,8 @@
      aws
      iftop
      rcm
+     libvterm
+     libvterm-neovim
 
      # WM Tools
      rofi
@@ -67,12 +73,17 @@
      # Browser
      firefox
      vivaldi
+     chromium
+     brave
 
      # Dev (mostly GUI)
-     jetbrains.phpstorm
-     jetbrains.pycharm-professional
-     mongodb-compass
      vscode
+     jetbrains.pycharm-professional
+     jupyter
+     python39Packages.jupyterlab
+     python39Packages.jupyterlab-widgets
+     jetbrains.phpstorm
+     mongodb-compass
 
      # Dev (Languages)
      nodejs-14_x
@@ -129,5 +140,7 @@
      mesa-demos
      openssl
      pinentry_gnome
+     libva1
+     gst_all_1.gst-vaapi
   ];
 }
