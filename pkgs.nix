@@ -54,6 +54,7 @@
      rcm
      libvterm
      libvterm-neovim
+     imagemagick
 
      # WM Tools
      rofi
