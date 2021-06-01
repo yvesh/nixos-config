@@ -105,6 +105,9 @@
   # Gnome Keyring
   services.gnome.gnome-keyring.enable = true;
 
+  # Systemd logind
+  services.logind.lidSwitchExternalPower = "ignore";
+
   # Emacs
   # services.emacs.enable = true;
   # services.emacs.package import /home/bytee/.emacs.d { pkgs = pkgs };

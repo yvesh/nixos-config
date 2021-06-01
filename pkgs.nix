@@ -89,6 +89,12 @@
      # Dev (Languages)
      nodejs-14_x
      yarn
+     php74
+     php74Extensions.gd
+     php74Extensions.intl
+     php74Extensions.ldap
+     php74Extensions.zip
+     php74Extensions.xml
      php80
      php80Extensions.gd
      php80Packages.phpcs
@@ -116,6 +122,7 @@
      lxappearance
      pavucontrol
      ffmpeg
+     remmina
 
      # Entertainment
      steam
