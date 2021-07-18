@@ -102,11 +102,15 @@
   services.upower.enable = true;
   services.thermald.enable = true;
 
+  # Firmware Updater
+  services.fwupd.enable = true;
+
   # Gnome Keyring
   services.gnome.gnome-keyring.enable = true;
 
-  # Systemd logind
+  # Systemd logind / Sleep
   services.logind.lidSwitchExternalPower = "ignore";
+  systemd.targets.hibernate.enable = false;
 
   # Emacs
   # services.emacs.enable = true;
@@ -114,6 +118,7 @@
   services.emacs.install = true;
 
   # User Services
+  programs.adb.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

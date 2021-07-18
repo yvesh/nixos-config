@@ -9,10 +9,10 @@
 
   # Networking
   networking.hostId = "42424243";
-  networking.hostName = "yHP";
+  networking.hostName = "yAWnix";
 
   # networking.interfaces.enp5s0.useDHCP = true;
-  networking.interfaces.wlp2s0.useDHCP = true;
+#  networking.interfaces.wlp2s0.useDHCP = true;
 
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 }

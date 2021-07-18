@@ -40,6 +40,7 @@
      smartmontools
      pciutils
      usbutils
+     dmidecode
 
      # CLI other
      weechat
@@ -55,6 +56,7 @@
      libvterm
      libvterm-neovim
      imagemagick
+     dnsutils
 
      # WM Tools
      rofi
@@ -95,16 +97,17 @@
      php74Extensions.ldap
      php74Extensions.zip
      php74Extensions.xml
-     php80
-     php80Extensions.gd
-     php80Packages.phpcs
-     php80Extensions.zip
-     php80Extensions.xml
-     php80Extensions.bz2
-     php80Extensions.yaml
-     php80Extensions.ldap
-     php80Extensions.intl
-     php80Packages.composer
+     php74Packages.composer
+     # php80
+     # php80Extensions.gd
+     # php80Packages.phpcs
+     # php80Extensions.zip
+     # php80Extensions.xml
+     # php80Extensions.bz2
+     # php80Extensions.yaml
+     # php80Extensions.ldap
+     # php80Extensions.intl
+     # php80Packages.composer
      gcc
      docker-compose
 
