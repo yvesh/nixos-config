@@ -57,6 +57,7 @@
      libvterm-neovim
      imagemagick
      dnsutils
+     sshfs
 
      # WM Tools
      rofi
