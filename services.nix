@@ -51,8 +51,20 @@
               Options FollowSymLinks
               AllowOverride All
        </Directory>
+        ''; };
+    drupal = {
+      documentRoot = "/home/bytee/srv/drupal";
+      serverAliases = [ "drupal.local" ];
+      extraConfig =
+ ''
+        <Directory "/home/bytee/srv/drupal">
+              DirectoryIndex index.php index.htm index.html
+              Options FollowSymLinks
+              AllowOverride All
+       </Directory>
         '';
-    };
+   };
+    
 };
 
   # Enable the X11 windowing system.
@@ -82,9 +94,9 @@
   };
 
   # Compositor
-  services.picom = {
-    enable = true;
-  };
+  # services.picom = {
+  #   enable = true;
+  # };
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -99,7 +111,7 @@
   services.blueman.enable = true;
 
   # Upower
-  services.upower.enable = true;
+  # services.upower.enable = true;
   services.thermald.enable = true;
 
   # Firmware Updater
@@ -129,6 +141,17 @@
   };
 
   # Virtualisation
-  virtualisation.libvirtd.enable = true;
+  virtualisation.libvirtd = {
+	enable = true;
+	qemuOvmf = true;
+	onBoot = "ignore";
+	onShutdown = "shutdown";
+	qemuRunAsRoot = false;
+  };
+
+  systemd.tmpfiles.rules = [
+    "f /dev/shm/looking-glass 0660 bytee qemu-libvirtd -"
+  ];
+
   virtualisation.docker.enable = true;
 }

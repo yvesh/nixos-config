@@ -8,17 +8,16 @@
 
   boot.initrd.supportedFilesystems = ["zfs"];
   boot.supportedFilesystems = ["zfs"];
-
   boot.zfs.requestEncryptionCredentials = true;
 
-  boot.kernelPackages = pkgs.linuxPackages_5_12;
+  boot.kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;
 
   # ZFS stable is broken in latest kernel for now and the 5_11 kernel has been removed from nix
-  boot.zfs.enableUnstable = true;
+  # boot.zfs.enableUnstable = true;
   # boot.kernelPackages = pkgs.linuxPackages_5_11;
 
   # Not needed for desktop
-  boot.kernelParams = [ "mitigations=off" ];
+  boot.kernelParams = [ "mitigations=off" "amd_iommu=on" ];
 
   hardware.cpu.amd.updateMicrocode = true;
 

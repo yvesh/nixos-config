@@ -11,7 +11,7 @@
   networking.hostId = "42424244";
   networking.hostName = "y39";
 
-  networking.interfaces.enp36s0f0.useDHCP = true;
+  # networking.interfaces.enp45s0f0.useDHCP = true;
   # networking.interfaces.wlp2s0.useDHCP = true;
 
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.

@@ -6,22 +6,23 @@
   # Dev Hosts on all my machines
   networking.extraHosts =
     ''
-      127.0.0.3 j4 j3 j4.local j3.local
+      127.0.0.3 j4 j3 j4.local j3.local drupal drupal.local
     '';
 
   # The global useDHCP flag is deprecated, therefore explicitly set to false here.
   # Per-interface useDHCP will be mandatory in the future, so this generated config
   # replicates the default behaviour.
   networking.useDHCP = false;
-
+  networking.dhcpcd.denyInterfaces = [ "macvtap0@*" ];
   networking.networkmanager.enable = true;
 
   # Disable ipv6 completly.. Too lazy
   networking.enableIPv6 = false;
+  # networking.bridges.br0.interfaces = [ "enp39s0" ];
 
   # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
+  networking.firewall.allowedTCPPorts = [ 4011 ];
+  networking.firewall.allowedUDPPorts = [ 4011 ];
   networking.firewall.enable = true;
   networking.firewall.allowPing = false;
 

@@ -40,7 +40,7 @@
      isNormalUser = true;
      description = "Bytee";
      shell = pkgs.zsh;
-     extraGroups = [ "wheel" "video" "networkmanager" "kvm" "libvirtd" "audio" "docker" "adbusers" ];
+     extraGroups = [ "wheel" "video" "networkmanager" "kvm" "libvirtd" "audio" "docker" "adbusers" "qemu-libvirtd" ];
   };
 
   users.extraUsers.root.shell = pkgs.zsh;
