@@ -58,6 +58,11 @@
      imagemagick
      dnsutils
      sshfs
+     xorg.xev
+     hwloc
+     joplin
+     mongoc
+     mongodb-tools
 
      # WM Tools
      rofi
@@ -73,7 +78,12 @@
      xclip
      xmobar
      trayer
-
+     ferdi
+     ffcast
+     xorg.xwininfo
+     xrectsel
+     picom
+     
      # Browser
      firefox
      vivaldi
@@ -83,14 +93,15 @@
      # Dev (mostly GUI)
      vscode
      jetbrains.pycharm-professional
-     jupyter
-     python39Packages.jupyterlab
-     python39Packages.jupyterlab-widgets
+     #python39Packages.mock
+     #jupyter
+     #python39Packages.jupyterlab
+     #python39Packages.jupyterlab-widgets
      jetbrains.phpstorm
      mongodb-compass
 
      # Dev (Languages)
-     nodejs-14_x
+     nodejs-16_x
      yarn
      php74
      php74Extensions.gd
@@ -115,6 +126,8 @@
      # GUI
      geany
      virt-manager
+     scream
+     looking-glass-client
      gnome3.gnome-tweak-tool
      arandr
      obs-studio
@@ -127,6 +140,9 @@
      pavucontrol
      ffmpeg
      remmina
+     networkmanagerapplet
+     joplin-desktop
+     # shotcut
 
      # Entertainment
      steam
