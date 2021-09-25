@@ -28,6 +28,7 @@
 
 ### Current machine profiles
 
+* Ryzen Desktop (Ryzen 5950X, 128 GB RAM, Radeon 5700 XT, Radeon 6600 XT (for VFIO))
 * Asus ROG 15 DUO (Ryzen 5900HX, 48 GB RAM, Geforce RTX 3070)
 * HP Gen 845 (Ryzen 4750U, 64 GB Ram, AMDGPU)
 
