@@ -64,7 +64,18 @@
        </Directory>
         '';
    };
-    
+   cmt = {
+      documentRoot = "/home/bytee/srv/cmt";
+      serverAliases = [ "cmt.local" ];
+      extraConfig =
+ ''
+        <Directory "/home/bytee/srv/cmt">
+              DirectoryIndex index.php index.htm index.html
+              Options FollowSymLinks
+              AllowOverride All
+       </Directory>
+        '';
+   };
 };
 
   # Enable the X11 windowing system.
@@ -146,7 +157,7 @@
 	qemuOvmf = true;
 	onBoot = "ignore";
 	onShutdown = "shutdown";
-	qemuRunAsRoot = false;
+#	qemuRunAsRoot = false;
   };
 
   systemd.tmpfiles.rules = [

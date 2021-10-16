@@ -31,6 +31,11 @@
      mariadb-client
      mongoc
      smbclient
+     efitools
+     #sbsigntools
+     minikube     
+     kubectl
+     kubernetes-helm
 
      # CLI Hardware
      acpi
@@ -83,6 +88,7 @@
      xorg.xwininfo
      xrectsel
      picom
+     dbeaver
      
      # Browser
      firefox
