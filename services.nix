@@ -3,10 +3,10 @@
 { config, lib, pkgs, ... }:
 
 {
-   # ZFS
-  services.zfs.autoScrub.enable = true;
-  services.zfs.autoSnapshot.enable = true;
-  services.zfs.trim.enable = true;
+  # ZFS
+  # services.zfs.autoScrub.enable = true;
+  # services.zfs.autoSnapshot.enable = true;
+  # services.zfs.trim.enable = true;
 
   # Enable flatpak
   services.flatpak.enable = true;
@@ -80,17 +80,26 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-  services.xserver.displayManager.sddm.enable = true;
+  services.displayManager.sddm.enable = true;
   # services.xserver.displayManager.defaultSession = 'none+xmonad';
 
   # Configure keymap in X11
-  services.xserver.layout = "de";
+  services.xserver.xkb.layout = "de";
   # services.xserver.xkbOptions = "eurosign:e";
 
   # Just for services and some apps..
   services.xserver.desktopManager.gnome.enable = true;
 
   # Most used WMs
+  programs.sway = {
+	enable = true;
+	wrapperFeatures.gtk = true;
+  };
+
+  programs.light.enable = true;
+
+  programs.hyprland.enable = true;
+
   services.xserver.windowManager.i3.enable = true;
   services.xserver.windowManager.bspwm.enable = true;
   services.xserver.windowManager.qtile.enable = true;
@@ -99,7 +108,7 @@
     enableContribAndExtras = true;
   };
 
-  services.xserver.libinput = {
+  services.libinput = {
      enable = true;
      touchpad.disableWhileTyping = true;
   };
@@ -112,10 +121,6 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
   services.printing.drivers = [ pkgs.epson-escpr2 ];
-
-  # Enable sound.
-  sound.enable = true;
-  hardware.pulseaudio.enable = true;
 
   # Enable Bluetooth
   hardware.bluetooth.enable = true;
@@ -151,13 +156,17 @@
      enableSSHSupport = true;
   };
 
+  programs.fish.enable = true;
+
   # Virtualisation
   virtualisation.libvirtd = {
 	enable = true;
-	qemuOvmf = true;
 	onBoot = "ignore";
 	onShutdown = "shutdown";
 #	qemuRunAsRoot = false;
+	qemu = {
+	 ovmf.enable = true;
+	};
   };
 
   systemd.tmpfiles.rules = [

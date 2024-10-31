@@ -1,4 +1,4 @@
-# NixOS 21.05 / Unstable Configuration
+# NixOS 24.05 / Unstable Configuration
 # Make sure to link the machine you want to use from the machines folder
 
 # Edit this configuration file to define what should be installed on
@@ -39,11 +39,11 @@
   users.users.bytee = {
      isNormalUser = true;
      description = "Bytee";
-     shell = pkgs.zsh;
-     extraGroups = [ "wheel" "video" "networkmanager" "kvm" "libvirtd" "audio" "docker" "adbusers" "qemu-libvirtd" ];
+     shell = pkgs.fish;
+     extraGroups = [ "wheel" "video" "input" "networkmanager" "kvm" "libvirtd" "audio" "docker" "adbusers" "qemu-libvirtd" ];
   };
 
-  users.extraUsers.root.shell = pkgs.zsh;
+  users.extraUsers.root.shell = pkgs.fish;
 
   # Environment variables
   environment.variables.GTK_THEME = "Adwaita:dark";

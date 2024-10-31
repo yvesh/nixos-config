@@ -21,8 +21,8 @@
   # networking.bridges.br0.interfaces = [ "enp39s0" ];
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 4011 ];
-  networking.firewall.allowedUDPPorts = [ 4011 ];
+  # networking.firewall.allowedTCPPorts = [ 4011 ];
+  # networking.firewall.allowedUDPPorts = [ 4011 ];
   networking.firewall.enable = true;
   networking.firewall.allowPing = false;
 
