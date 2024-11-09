@@ -36,6 +36,7 @@
      #sbsigntools
      minikube     
      kubectl
+     fzf
      kubernetes-helm
      zed
 
