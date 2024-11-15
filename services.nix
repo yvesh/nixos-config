@@ -4,9 +4,9 @@
 
 {
   # ZFS
-  # services.zfs.autoScrub.enable = true;
-  # services.zfs.autoSnapshot.enable = true;
-  # services.zfs.trim.enable = true;
+  services.zfs.autoScrub.enable = true;
+  services.zfs.autoSnapshot.enable = true;
+  services.zfs.trim.enable = true;
 
   # Enable flatpak
   services.flatpak.enable = true;
@@ -165,6 +165,7 @@
 	onShutdown = "shutdown";
 #	qemuRunAsRoot = false;
 	qemu = {
+         package = pkgs.qemu_kvm;
 	 ovmf.enable = true;
 	};
   };

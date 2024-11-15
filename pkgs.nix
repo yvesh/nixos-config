@@ -22,6 +22,7 @@
      curl
      procps
      gnupg
+     fzf
      htop
      jq
      fd
@@ -36,9 +37,10 @@
      #sbsigntools
      minikube     
      kubectl
-     fzf
      kubernetes-helm
      zed
+     luarocks
+     cargo
 
      # CLI Hardware
      acpi
@@ -73,6 +75,7 @@
      mongodb-tools
      starship
      atuin
+     onedrive
 
      # WM Tools
      rofi
@@ -134,10 +137,14 @@
      mongodb-compass
 
      # Dev (Languages)
+     ## Node
      nodejs
      pnpm
      bun
      yarn
+     pkgs.nodePackages."neovim" # Usually using npm set prefix ~/.npm-global instead
+
+     ## PHP
      php83
      php83Packages.composer
      # php74

@@ -6,16 +6,18 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # boot.initrd.supportedFilesystems = ["zfs"];
-  # boot.supportedFilesystems = ["zfs"];
-  # boot.zfs.requestEncryptionCredentials = true;
+  boot.initrd.supportedFilesystems = ["zfs"];
+  boot.supportedFilesystems = ["zfs"];
+  boot.zfs.requestEncryptionCredentials = true;
+  boot.zfs.extraPools = [ "zpool" ];
 
+  boot.kernelPackages = pkgs.linuxPackages_zen;
   # boot.kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;
 
-  # boot.zfs.enableUnstable = true;
+  boot.zfs.package = pkgs.zfs_unstable;
 
   # Not needed for desktop
-  boot.kernelParams = [ "mitigations=off" "intel_iommu=on" ];
+  boot.kernelParams = [ "mitigations=off" "amd_ioummu=on" ];
   # hardware.cpu.amd.updateMicrocode = true;
   
   # TODO move to machine
@@ -26,11 +28,15 @@
 
   # TODO move to machine
   hardware.graphics.extraPackages = with pkgs; [
-      intel-ocl
-      vpl-gpu-rt
-      intel-vaapi-driver
-      intel-media-driver
-      intel-compute-runtime
+  # AMD GPU
+        amdvlk
+	rocmPackages.clr.icd
+  # Intel GPU
+  #    intel-ocl
+  #    vpl-gpu-rt
+  #    intel-vaapi-driver
+  #    intel-media-driver
+  #    intel-compute-runtime
   ];
   hardware.graphics.enable32Bit = true;
 
