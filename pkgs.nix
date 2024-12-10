@@ -11,6 +11,10 @@
      vim
      neovim
 
+     # nix related
+     nix-search
+     nix-search-cli
+
      # CLI Tools
      zsh
      fish
@@ -39,6 +43,7 @@
      kubectl
      kubernetes-helm
      zed
+     yazi
      luarocks
      cargo
 
@@ -51,6 +56,8 @@
      pciutils
      usbutils
      dmidecode
+     gptfdisk
+     efibootmgr
 
      # CLI other
      weechat
@@ -59,7 +66,7 @@
      neofetch
      brightnessctl
      ranger
-     cava
+     # cava  # broken - 2024-11-16
      awscli2
      iftop
      rcm
@@ -120,19 +127,23 @@
      chromium
      brave
 
-     # Dev (mostly GUI)
-     vscode
-     jetbrains.pycharm-professional
+     # Other Dev (mostly GUI)
+     vscode # not really using it anymore, mostly using nvim
+     jetbrains.pycharm-professional # For python it's better than vscode
      #python39Packages.mock
      #jupyter
      #python39Packages.jupyterlab
      #python39Packages.jupyterlab-widgets
-     python312
-     python312Packages.requests
-     python312Packages.netifaces
-     python312Packages.pydbus
-     python312Packages.psutil
-     # python312Packages.contrib
+     #python312
+     (python3.withPackages (ps: [ 
+      ps.pandas
+      ps.requests
+      ps.psutil
+      ps.requests
+      ps.netifaces
+      # ps.pydbus
+      ps.dbus-python
+     ]))
      jetbrains.phpstorm
      mongodb-compass
 
@@ -142,7 +153,7 @@
      pnpm
      bun
      yarn
-     pkgs.nodePackages."neovim" # Usually using npm set prefix ~/.npm-global instead
+     # pkgs.nodePackages."neovim" # Usually using npm set prefix ~/.npm-global instead
 
      ## PHP
      php83
@@ -204,7 +215,7 @@
      breeze-icons
 
      # Fonts
-     nerdfonts
+     # nerdfonts
      font-awesome
      font-awesome_4
      material-design-icons

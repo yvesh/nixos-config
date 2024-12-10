@@ -11,13 +11,13 @@
   boot.zfs.requestEncryptionCredentials = true;
   boot.zfs.extraPools = [ "zpool" ];
 
-  boot.kernelPackages = pkgs.linuxPackages_zen;
+  boot.kernelPackages = pkgs.linuxPackages_6_11;
   # boot.kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;
 
   boot.zfs.package = pkgs.zfs_unstable;
 
   # Not needed for desktop
-  boot.kernelParams = [ "mitigations=off" "amd_ioummu=on" ];
+  boot.kernelParams = [ "zfs.zfs_arc_max=12884901888" "mitigations=off" "amd_ioummu=on" ];
   # hardware.cpu.amd.updateMicrocode = true;
   
   # TODO move to machine
