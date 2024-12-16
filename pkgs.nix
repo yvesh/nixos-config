@@ -46,6 +46,7 @@
      yazi
      luarocks
      cargo
+     ipmitool
 
      # CLI Hardware
      acpi
