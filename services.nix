@@ -149,6 +149,15 @@
   # services.emacs.package import /home/bytee/.emacs.d { pkgs = pkgs };
   services.emacs.install = true;
 
+  # Node Exporter
+  services.prometheus.exporters.node = {
+    enable = true;
+    port = 9100;
+    enabledCollectors = [ "systemd" "zfs" ];
+    # /nix/store/zgsw0yx18v10xa58psanfabmg95nl2bb-node_exporter-1.8.1/bin/node_exporter  --help
+    extraFlags = [ "--collector.ethtool" "--collector.softirqs" "--collector.tcpstat" ];
+  };
+
   # User Services
   programs.adb.enable = true;
 

@@ -47,6 +47,7 @@
      luarocks
      cargo
      ipmitool
+     grafana-alloy
 
      # CLI Hardware
      acpi
@@ -199,6 +200,7 @@
      ffmpeg
      remmina
      networkmanagerapplet
+     kdePackages.kdeconnect-kde
      # shotcut
 
      # Entertainment
