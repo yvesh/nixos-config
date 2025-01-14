@@ -20,6 +20,7 @@
      fish
      wget
      nmap
+     netcat-gnu
      tcpdump
      unzip
      git
@@ -37,7 +38,7 @@
      ansible
      mariadb-client
      mongoc
-     efitools
+     # efitools - broken 2024-12-28
      #sbsigntools
      minikube     
      kubectl
@@ -69,7 +70,7 @@
      brightnessctl
      ranger
      # cava  # broken - 2024-11-16
-     awscli2
+     # awscli2 # broken - 2024-12-28
      iftop
      rcm
      libvterm
@@ -90,6 +91,7 @@
      rofi
      wofi
      polybar
+     rustdesk
 
      # Screenshots
      maim
@@ -187,7 +189,7 @@
      geany
      virt-manager
      scream
-     looking-glass-client
+     # looking-glass-client # broken 2024-12-31
      arandr
      obs-studio
      darktable

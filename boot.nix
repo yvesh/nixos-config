@@ -30,7 +30,7 @@
   hardware.graphics.extraPackages = with pkgs; [
   # AMD GPU
         amdvlk
-	rocmPackages.clr.icd
+	# rocmPackages.clr.icd
   # Intel GPU
   #    intel-ocl
   #    vpl-gpu-rt
