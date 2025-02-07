@@ -6,30 +6,30 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.initrd.supportedFilesystems = ["zfs"];
-  boot.supportedFilesystems = ["zfs"];
-  boot.zfs.requestEncryptionCredentials = true;
-  boot.zfs.extraPools = [ "zpool" ];
+  # boot.initrd.supportedFilesystems = ["zfs"];
+  # boot.supportedFilesystems = ["zfs"];
+  # boot.zfs.requestEncryptionCredentials = true;
+  # boot.zfs.extraPools = [ "zpool" ];
 
-  boot.kernelPackages = pkgs.linuxPackages_6_11;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
   # boot.kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;
 
-  boot.zfs.package = pkgs.zfs_unstable;
+  # boot.zfs.package = pkgs.zfs_unstable;
 
   # Not needed for desktop
-  boot.kernelParams = [ "zfs.zfs_arc_max=12884901888" "mitigations=off" "amd_ioummu=on" ];
+  boot.kernelParams = [ "mitigations=off" "amd_ioummu=on" ];
   # hardware.cpu.amd.updateMicrocode = true;
   
   # TODO move to machine
-  hardware.cpu.intel.updateMicrocode = true;
+  # hardware.cpu.intel.updateMicrocode = true;
 
   # 3D Accel
   hardware.graphics.enable = true;
 
   # TODO move to machine
-  hardware.graphics.extraPackages = with pkgs; [
+  # hardware.graphics.extraPackages = with pkgs; [
   # AMD GPU
-        amdvlk
+  #      amdvlk
 	# rocmPackages.clr.icd
   # Intel GPU
   #    intel-ocl
@@ -37,7 +37,7 @@
   #    intel-vaapi-driver
   #    intel-media-driver
   #    intel-compute-runtime
-  ];
+  # ];
   hardware.graphics.enable32Bit = true;
 
   # Samba Shares

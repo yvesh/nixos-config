@@ -4,9 +4,9 @@
 
 {
   # ZFS
-  services.zfs.autoScrub.enable = true;
-  services.zfs.autoSnapshot.enable = true;
-  services.zfs.trim.enable = true;
+  # services.zfs.autoScrub.enable = true;
+  # services.zfs.autoSnapshot.enable = true;
+  # services.zfs.trim.enable = true;
 
   # Enable flatpak
   services.flatpak.enable = true;
@@ -94,6 +94,14 @@
   programs.sway = {
 	enable = true;
 	wrapperFeatures.gtk = true;
+  };
+
+  programs.obs-studio = {
+    enable = true;
+    plugins = with pkgs.obs-studio-plugins; [
+      obs-backgroundremoval
+      obs-pipewire-audio-capture
+    ];
   };
 
   programs.light.enable = true;
@@ -188,4 +196,11 @@
   ];
 
   virtualisation.docker.enable = true;
+
+  services.ollama = {
+    enable = true;
+    acceleration = "cuda";
+  };
+
+  services.open-webui.enable = true;
 }
