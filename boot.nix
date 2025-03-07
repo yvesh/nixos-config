@@ -17,17 +17,17 @@
   boot.zfs.package = pkgs.zfs_unstable;
 
   # Not needed for desktop
-  boot.kernelParams = [ "zfs.zfs_arc_max=12884901888" "mitigations=off" "amd_ioummu=on" ];
+  boot.kernelParams = [ "mitigations=off" "amd_ioummu=on" ];
   # hardware.cpu.amd.updateMicrocode = true;
   
   # TODO move to machine
-  hardware.cpu.intel.updateMicrocode = true;
+  # hardware.cpu.intel.updateMicrocode = true;
 
   # 3D Accel
   hardware.graphics.enable = true;
 
   # TODO move to machine
-  hardware.graphics.extraPackages = with pkgs; [
+   hardware.graphics.extraPackages = with pkgs; [
   # AMD GPU
         amdvlk
 	# rocmPackages.clr.icd

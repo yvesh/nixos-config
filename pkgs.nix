@@ -18,6 +18,7 @@
      # CLI Tools
      zsh
      fish
+     tmux
      wget
      nmap
      netcat-gnu
@@ -49,6 +50,12 @@
      cargo
      ipmitool
      grafana-alloy
+     slides
+     ollama
+
+     # Nvidia (Machine learning)
+     libnvidia-container
+     cudatoolkit
 
      # CLI Hardware
      acpi
@@ -192,7 +199,7 @@
      scream
      # looking-glass-client # broken 2024-12-31
      arandr
-     obs-studio
+     # obs-studio # using plugins, so configured differently
      darktable
      xfce.thunar
      xfce.tumbler
@@ -204,7 +211,8 @@
      remmina
      networkmanagerapplet
      kdePackages.kdeconnect-kde
-     # shotcut
+     shotcut
+     lmstudio
 
      # 3d printing
      orca-slicer
