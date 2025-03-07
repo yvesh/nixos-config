@@ -11,6 +11,11 @@
   # Enable flatpak
   services.flatpak.enable = true;
 
+  # Enable ssh (sometimes)
+  services.openssh = {
+    enable = true;
+  };
+
   # Simple Apache + PHP Stack
   services.httpd.enable = true;
   services.httpd.adminAddr = "root@localhost";

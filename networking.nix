@@ -23,8 +23,8 @@
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ 4011 ];
   # networking.firewall.allowedUDPPorts = [ 4011 ];
-  networking.firewall.allowedTCPPorts = [ 9100 1714 1715 1716 ];
-  networking.firewall.allowedUDPPorts = [ 9100 1714 1715 1716 ];
+  networking.firewall.allowedTCPPorts = [ 22 9100 1714 1715 1716 ];
+  networking.firewall.allowedUDPPorts = [ 22 9100 1714 1715 1716 ];
   networking.firewall.enable = true;
   networking.firewall.allowPing = false;
 

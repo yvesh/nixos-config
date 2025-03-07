@@ -94,7 +94,8 @@
      rustdesk
 
      # Screenshots
-     maim
+     # maim - broken as of 2025-02-25
+     flameshot
      grim
      slurp
 
@@ -124,7 +125,7 @@
      xrectsel
      picom
      dbeaver-bin
-     
+
      # Browser
      firefox
      vivaldi
@@ -205,6 +206,12 @@
      kdePackages.kdeconnect-kde
      # shotcut
 
+     # 3d printing
+     orca-slicer
+     qidi-slicer-bin
+     freecad # there's also freecad-wayland
+     openscad
+
      # Entertainment
      steam
      lutris
@@ -216,8 +223,8 @@
      zinit
 
      # Themes
-     breeze-gtk
-     breeze-icons
+     # libsForQt5.breeze-gtk
+     # breeze-icons
 
      # Fonts
      # nerdfonts

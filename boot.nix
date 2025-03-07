@@ -11,7 +11,7 @@
   boot.zfs.requestEncryptionCredentials = true;
   boot.zfs.extraPools = [ "zpool" ];
 
-  boot.kernelPackages = pkgs.linuxPackages_6_11;
+  boot.kernelPackages = pkgs.linuxPackages_6_12;
   # boot.kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;
 
   boot.zfs.package = pkgs.zfs_unstable;
