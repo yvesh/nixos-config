@@ -109,6 +109,7 @@
 
      # Screenshots
      maim
+     flameshot
      grim
      slurp
 
@@ -220,6 +221,12 @@
      shotcut
      lmstudio
 
+     # 3d printing
+     orca-slicer
+     qidi-slicer-bin
+     freecad # there's also freecad-wayland
+     openscad
+
      # Entertainment
      steam
      lutris
@@ -233,6 +240,7 @@
 
      # Themes
      # breeze-gtk
+     # libsForQt5.breeze-gtk
      # breeze-icons
 
      # Fonts

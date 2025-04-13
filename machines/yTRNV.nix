@@ -9,7 +9,7 @@
 
   # Networking
   networking.hostId = "42424246";
-  networking.hostName = "yTRNV";
+  networking.hostName = "yTR7980";
 
   # hardware.nvidia = {
   #   modesetting.enable = true;

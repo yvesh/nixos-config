@@ -11,7 +11,7 @@
   # boot.zfs.requestEncryptionCredentials = true;
   # boot.zfs.extraPools = [ "zpool" ];
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_zen;
   # boot.kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;
 
   # boot.zfs.package = pkgs.zfs_unstable;
@@ -27,9 +27,9 @@
   hardware.graphics.enable = true;
 
   # TODO move to machine
-  # hardware.graphics.extraPackages = with pkgs; [
+   hardware.graphics.extraPackages = with pkgs; [
   # AMD GPU
-  #      amdvlk
+        amdvlk
 	# rocmPackages.clr.icd
   # Intel GPU
   #    intel-ocl
@@ -37,7 +37,7 @@
   #    intel-vaapi-driver
   #    intel-media-driver
   #    intel-compute-runtime
-  # ];
+  ];
   hardware.graphics.enable32Bit = true;
 
   # Samba Shares
