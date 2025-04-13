@@ -1,25 +1,25 @@
 # This contains setting which are different per machine
-# ThreadRipper TR7980X, 384 GB Memory, Nvidia 4090
+# ThreadRipper TR7980X, 384 GB Memory, 7900 XTX
 
 { config, pkgs, ... }:
 
 {
   # Video Driver
-  services.xserver.videoDrivers = [ "nvidia" ];
+  services.xserver.videoDrivers = [ "amdgpu" ];
 
   # Networking
   networking.hostId = "42424246";
   networking.hostName = "yTRNV";
 
-  hardware.nvidia = {
-    modesetting.enable = true;
-    open = true;
-    nvidiaSettings = true;
-    package = config.boot.kernelPackages.nvidiaPackages.beta;
-    forceFullCompositionPipeline = true;
-  };
+  # hardware.nvidia = {
+  #   modesetting.enable = true;
+  #   open = true;
+  #   nvidiaSettings = true;
+  #   package = config.boot.kernelPackages.nvidiaPackages.beta;
+  #   forceFullCompositionPipeline = true;
+  # };
 
-  hardware.nvidia-container-toolkit.enable = true;
+  # hardware.nvidia-container-toolkit.enable = true;
 
   # hardware.graphics = {
   #   enable = true;

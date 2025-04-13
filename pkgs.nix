@@ -51,11 +51,11 @@
      ipmitool
      grafana-alloy
      slides
-     ollama
+     # ollama
 
      # Nvidia (Machine learning)
-     libnvidia-container
-     cudatoolkit
+     # libnvidia-container
+     # cudatoolkit
 
      # CLI Hardware
      acpi
@@ -98,7 +98,14 @@
      rofi
      wofi
      polybar
-     rustdesk
+     waybar
+     hyprpaper
+     hyprpolkitagent
+     hypridle
+     hyprlock
+     hyprsysteminfo
+     hyprcursor
+     # rustdesk
 
      # Screenshots
      maim
@@ -117,8 +124,8 @@
 
      # Clipboard and Notifications
      wl-clipboard
-     mako
      copyq
+     mako
      dunst
 
      # Misc
@@ -131,7 +138,7 @@
      xrectsel
      picom
      dbeaver-bin
-     
+
      # Browser
      firefox
      vivaldi
@@ -220,12 +227,13 @@
 
      # Terms & Co
      kitty
+     wezterm
      alacritty
      zinit
 
      # Themes
-     breeze-gtk
-     breeze-icons
+     # breeze-gtk
+     # breeze-icons
 
      # Fonts
      # nerdfonts
