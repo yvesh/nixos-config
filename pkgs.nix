@@ -51,6 +51,8 @@
      ipmitool
      grafana-alloy
      slides
+     cowsay
+     lolcat
      # ollama
 
      # Nvidia (Machine learning)
@@ -112,6 +114,7 @@
      flameshot
      grim
      slurp
+     wf-recorder
 
      # Backgrounds
      feh
@@ -147,6 +150,7 @@
      brave
 
      # Other Dev (mostly GUI)
+     zed-editor # playing around
      vscode # not really using it anymore, mostly using nvim
      jetbrains.pycharm-professional # For python it's better than vscode
      #python39Packages.mock
