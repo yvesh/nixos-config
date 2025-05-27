@@ -112,6 +112,7 @@
   programs.light.enable = true;
 
   programs.hyprland.enable = true;
+  programs.hyprland.withUWSM = true;
 
   services.xserver.windowManager.i3.enable = true;
 
@@ -202,10 +203,10 @@
 
   virtualisation.docker.enable = true;
 
-  services.ollama = {
-    enable = true;
-    acceleration = "cuda";
-  };
+  # services.ollama = {
+  #   enable = true;
+  #   acceleration = "cuda";
+  # };
 
-  services.open-webui.enable = true;
+  # services.open-webui.enable = true;
 }

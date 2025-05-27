@@ -35,6 +35,7 @@
      bc
      bison
      flex
+     file
      ripgrep
      ansible
      mariadb-client
@@ -54,6 +55,8 @@
      cowsay
      lolcat
      # ollama
+     pwgen
+     appimage-run
 
      # Nvidia (Machine learning)
      # libnvidia-container
@@ -76,6 +79,7 @@
      xorg.xrandr
      whois
      neofetch
+     fastfetch
      brightnessctl
      ranger
      # cava  # broken - 2024-11-16
@@ -89,7 +93,7 @@
      sshfs
      xorg.xev
      hwloc
-     joplin
+     # joplin
      mongoc
      mongodb-tools
      starship
@@ -107,6 +111,7 @@
      hyprlock
      hyprsysteminfo
      hyprcursor
+     rose-pine-hyprcursor
      # rustdesk
 
      # Screenshots
