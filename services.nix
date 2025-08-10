@@ -93,7 +93,7 @@
   # services.xserver.xkbOptions = "eurosign:e";
 
   # Just for services and some apps..
-  services.xserver.desktopManager.gnome.enable = true;
+  services.desktopManager.gnome.enable = true;
 
   # Most used WMs
   programs.sway = {

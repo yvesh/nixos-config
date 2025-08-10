@@ -54,13 +54,15 @@
      slides
      cowsay
      lolcat
-     # ollama
      pwgen
      appimage-run
 
-     # Nvidia (Machine learning)
+     # Machine Learning
+     # Nvidia
      # libnvidia-container
      # cudatoolkit
+     # ollama
+     codex
 
      # CLI Hardware
      acpi
@@ -172,6 +174,7 @@
       # ps.pydbus
       ps.dbus-python
      ]))
+     uv
      jetbrains.phpstorm
      mongodb-compass
 
@@ -229,6 +232,7 @@
      kdePackages.kdeconnect-kde
      shotcut
      lmstudio
+     blender
 
      # 3d printing
      orca-slicer
