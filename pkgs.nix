@@ -237,6 +237,7 @@
      # 3d printing
      orca-slicer
      qidi-slicer-bin
+     # bambu-studio
      freecad # there's also freecad-wayland
      openscad
 
@@ -262,6 +263,11 @@
      font-awesome_4
      material-design-icons
      siji
+     nerd-fonts.fira-code
+     nerd-fonts.droid-sans-mono
+     nerd-fonts.noto
+     nerd-fonts.hack
+     nerd-fonts.ubuntu
 
      # Misc
      mesa-demos

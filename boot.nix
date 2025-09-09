@@ -50,8 +50,17 @@
   #       in ["${automount_opts},credentials=/etc/nixos/smb-secrets"];
   # };
 
+  fileSystems."/mnt/fast01" = {
+    device = "//10.0.42.30/fast01";
+    fsType = "cifs";
+    options = let
+    automount_opts = "x-systemd.automount,uid=1000,gid=100,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
+
+    in ["${automount_opts},credentials=/etc/nixos/smb-secrets"];
+  };
+
   fileSystems."/mnt/slow01" = {
-    device = "//10.0.2.30/slow01";
+    device = "//10.0.42.30/slow01";
     fsType = "cifs";
     options = let
     automount_opts = "x-systemd.automount,uid=1000,gid=100,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
