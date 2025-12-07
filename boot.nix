@@ -29,7 +29,7 @@
   # TODO move to machine
    hardware.graphics.extraPackages = with pkgs; [
   # AMD GPU
-        amdvlk
+        #amdvlk
 	# rocmPackages.clr.icd
   # Intel GPU
   #    intel-ocl

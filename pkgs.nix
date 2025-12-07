@@ -38,7 +38,7 @@
      file
      ripgrep
      ansible
-     mariadb-client
+     mariadb.client
      mongoc
      # efitools - broken 2024-12-28
      #sbsigntools
@@ -56,6 +56,7 @@
      lolcat
      pwgen
      appimage-run
+     iperf3
 
      # Machine Learning
      # Nvidia
@@ -63,6 +64,7 @@
      # cudatoolkit
      # ollama
      codex
+     claude-code
 
      # CLI Hardware
      acpi
@@ -177,6 +179,8 @@
      uv
      jetbrains.phpstorm
      mongodb-compass
+     antigravity-fhs
+     code-cursor
 
      # Dev (Languages)
      ## Node

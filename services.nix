@@ -155,7 +155,8 @@
   services.gnome.gnome-keyring.enable = true;
 
   # Systemd logind / Sleep
-  services.logind.lidSwitchExternalPower = "ignore";
+  #services.logind.lidSwitchExternalPower = "ignore";
+  services.logind.settings.Login.HandleLidSwitchExternalPower = "ignore";
   systemd.targets.hibernate.enable = false;
 
   # Emacs
@@ -193,7 +194,7 @@
 #	qemuRunAsRoot = false;
 	qemu = {
          package = pkgs.qemu_kvm;
-	 ovmf.enable = true;
+         #ovmf.enable = true;
 	};
   };
 
