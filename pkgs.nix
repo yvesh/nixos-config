@@ -30,6 +30,7 @@
      gnupg
      fzf
      htop
+     btop
      jq
      fd
      bc
@@ -57,6 +58,10 @@
      pwgen
      appimage-run
      iperf3
+     nvtopPackages.amd
+     ryzenadj
+     stress
+     sass
 
      # Machine Learning
      # Nvidia

@@ -70,7 +70,7 @@
         '';
    };
    cmt = {
-      documentRoot = "/home/bytee/projects/cmt/cmt-webseite-2026/";
+      documentRoot = "/home/bytee/projects/cmt/cmt-webseite-2026/dist/";
       serverAliases = [ "cmt.local" ];
       extraConfig =
  ''
@@ -146,7 +146,12 @@
 
   # Upower
   # services.upower.enable = true;
-  services.thermald.enable = true;
+  # services.thermald.enable = true;
+# 3. CPU Governor auf Performance (für den Test am Netzteil)
+  powerManagement.cpuFreqGovernor = "performance";
+
+  services.power-profiles-daemon.enable = true;
+  services.tlp.enable = false;
 
   # Firmware Updater
   services.fwupd.enable = true;
@@ -172,6 +177,13 @@
   #   # /nix/store/zgsw0yx18v10xa58psanfabmg95nl2bb-node_exporter-1.8.1/bin/node_exporter  --help
   #   extraFlags = [ "--collector.ethtool" "--collector.softirqs" "--collector.tcpstat" ];
   # };
+
+  # Dynamic libraries for unpackaged programs
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    glibc
+    libcxx
+  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

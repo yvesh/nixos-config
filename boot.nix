@@ -17,7 +17,7 @@
   # boot.zfs.package = pkgs.zfs_unstable;
 
   # Not needed for desktop
-  boot.kernelParams = [ "mitigations=off" "amd_ioummu=on" ];
+  boot.kernelParams = [ "mitigations=off" "amd_ioummu=on" "iomem=relaxed" "acpi_enforce_resources=lax" ];
   # hardware.cpu.amd.updateMicrocode = true;
   
   # TODO move to machine
@@ -25,6 +25,7 @@
 
   # 3D Accel
   hardware.graphics.enable = true;
+  hardware.enableRedistributableFirmware = true;
 
   # TODO move to machine
    hardware.graphics.extraPackages = with pkgs; [
