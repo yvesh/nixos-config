@@ -30,7 +30,7 @@
  ''
         <Directory "/home/bytee/srv">
               DirectoryIndex index.php index.htm index.html
-              Options FollowSymLinks
+              Options FollowSymLinks Indexes
               AllowOverride All
        </Directory>
         '';
@@ -42,7 +42,7 @@
  ''
         <Directory "/home/bytee/srv/j4">
               DirectoryIndex index.php index.htm index.html
-              Options FollowSymLinks
+              Options FollowSymLinks Indexes
               AllowOverride All
        </Directory>
         '';    };
@@ -53,7 +53,7 @@
  ''
         <Directory "/home/bytee/srv/j3">
               DirectoryIndex index.php index.htm index.html
-              Options FollowSymLinks
+              Options FollowSymLinks Indexes
               AllowOverride All
        </Directory>
         ''; };
@@ -64,19 +64,19 @@
  ''
         <Directory "/home/bytee/srv/drupal">
               DirectoryIndex index.php index.htm index.html
-              Options FollowSymLinks
+              Options FollowSymLinks Indexes
               AllowOverride All
        </Directory>
         '';
    };
    cmt = {
-      documentRoot = "/home/bytee/srv/cmt";
+      documentRoot = "/home/bytee/projects/cmt/cmt-webseite-2026/";
       serverAliases = [ "cmt.local" ];
       extraConfig =
  ''
-        <Directory "/home/bytee/srv/cmt">
-              DirectoryIndex index.php index.htm index.html
-              Options FollowSymLinks
+        <Directory "/home/bytee/projects/cmt/cmt-webseite-2026/">
+              DirectoryIndex index.html index.htm
+              Options FollowSymLinks Indexes
               AllowOverride All
        </Directory>
         '';
@@ -165,16 +165,13 @@
   services.emacs.install = true;
 
   # Node Exporter
-  services.prometheus.exporters.node = {
-    enable = true;
-    port = 9100;
-    enabledCollectors = [ "systemd" "zfs" ];
-    # /nix/store/zgsw0yx18v10xa58psanfabmg95nl2bb-node_exporter-1.8.1/bin/node_exporter  --help
-    extraFlags = [ "--collector.ethtool" "--collector.softirqs" "--collector.tcpstat" ];
-  };
-
-  # User Services
-  programs.adb.enable = true;
+  # services.prometheus.exporters.node = {
+  #   enable = true;
+  #   port = 9100;
+  #   enabledCollectors = [ "systemd" "zfs" ];
+  #   # /nix/store/zgsw0yx18v10xa58psanfabmg95nl2bb-node_exporter-1.8.1/bin/node_exporter  --help
+  #   extraFlags = [ "--collector.ethtool" "--collector.softirqs" "--collector.tcpstat" ];
+  # };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

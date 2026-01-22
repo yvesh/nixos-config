@@ -81,6 +81,7 @@
      # CLI other
      weechat
      xorg.xrandr
+     wdisplays
      whois
      neofetch
      fastfetch
@@ -276,7 +277,7 @@
      # Misc
      mesa-demos
      openssl
-     libva1
+     # libva1
      gst_all_1.gst-vaapi
   ];
 }
