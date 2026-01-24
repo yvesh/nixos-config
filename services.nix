@@ -16,72 +16,104 @@
     enable = true;
   };
 
-  # Simple Apache + PHP Stack
-  services.httpd.enable = true;
-  services.httpd.adminAddr = "root@localhost";
-  services.httpd.user = "bytee";
-  services.httpd.enablePHP = true;
+  # Nginx (PHP disabled)
+  services.nginx.enable = true;
+  services.nginx.user = "bytee";
+  services.nginx.group = "users";
+  systemd.services.nginx.serviceConfig.ProtectHome = false;
 
-  # Some local vhosts
-  services.httpd.virtualHosts = {
+  services.nginx.virtualHosts = {
     localhost = {
-      documentRoot = "/home/bytee/srv";
-      extraConfig =
- ''
-        <Directory "/home/bytee/srv">
-              DirectoryIndex index.php index.htm index.html
-              Options FollowSymLinks Indexes
-              AllowOverride All
-       </Directory>
+      root = "/home/bytee/srv";
+      locations."/" = {
+        extraConfig = ''
+          index index.htm index.html;
+          autoindex on;
         '';
+      };
     };
     j4 = {
       serverAliases = [ "j4.local" ];
-      documentRoot = "/home/bytee/srv/j4";
-      extraConfig =
- ''
-        <Directory "/home/bytee/srv/j4">
-              DirectoryIndex index.php index.htm index.html
-              Options FollowSymLinks Indexes
-              AllowOverride All
-       </Directory>
-        '';    };
+      root = "/home/bytee/srv/j4";
+      locations."/" = {
+        extraConfig = ''
+          index index.htm index.html;
+          autoindex on;
+        '';
+      };
+    };
     j3 = {
-      documentRoot = "/home/bytee/srv/j3";
       serverAliases = [ "j3.local" ];
-      extraConfig =
- ''
-        <Directory "/home/bytee/srv/j3">
-              DirectoryIndex index.php index.htm index.html
-              Options FollowSymLinks Indexes
-              AllowOverride All
-       </Directory>
-        ''; };
+      root = "/home/bytee/srv/j3";
+      locations."/" = {
+        extraConfig = ''
+          index index.htm index.html;
+          autoindex on;
+        '';
+      };
+    };
     drupal = {
-      documentRoot = "/home/bytee/srv/drupal";
       serverAliases = [ "drupal.local" ];
-      extraConfig =
- ''
-        <Directory "/home/bytee/srv/drupal">
-              DirectoryIndex index.php index.htm index.html
-              Options FollowSymLinks Indexes
-              AllowOverride All
-       </Directory>
+      root = "/home/bytee/srv/drupal";
+      locations."/" = {
+        extraConfig = ''
+          index index.htm index.html;
+          autoindex on;
         '';
-   };
-   cmt = {
-      documentRoot = "/home/bytee/projects/cmt/cmt-webseite-2026/dist/";
+      };
+    };
+    cmt = {
       serverAliases = [ "cmt.local" ];
-      extraConfig =
- ''
-        <Directory "/home/bytee/projects/cmt/cmt-webseite-2026/">
-              DirectoryIndex index.html index.htm
-              Options FollowSymLinks Indexes
-              AllowOverride All
-       </Directory>
+      root = "/home/bytee/projects/cmt/cmt-webseite-2026/dist/";
+      extraConfig = ''
+        ssi on;
+        ssi_types text/html;
+        add_header X-Frame-Options "SAMEORIGIN" always;
+        add_header X-Content-Type-Options "nosniff" always;
+        add_header X-XSS-Protection "1; mode=block" always;
+        add_header Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https: http://localhost:3000; connect-src 'self' http://localhost:3000 https://www.googletagmanager.com https://www.google-analytics.com https://region1.google-analytics.com https://region2.google-analytics.com https://region3.google-analytics.com https://region4.google-analytics.com https://region5.google-analytics.com https://challenges.cloudflare.com https://api.seminarplan.app; frame-src 'self' https://challenges.cloudflare.com https://www.google.com https://kiberater.cmt.de; font-src 'self' data: https://fonts.gstatic.com; object-src 'none'; media-src 'self'; base-uri 'self'; form-action 'self';" always;
+        error_page 404 /404.html;
+      '';
+      locations."/" = {
+        extraConfig = ''
+          index index.html index.htm;
+          autoindex on;
+          try_files $uri $uri/ =404;
         '';
-   };
-};
+      };
+      locations."/fragments/" = {
+        extraConfig = ''
+          internal;
+        '';
+      };
+      locations."/assets/" = {
+        extraConfig = ''
+          try_files $uri =404;
+        '';
+      };
+      locations."/api/" = {
+        proxyPass = "http://localhost:4000";
+        extraConfig = ''
+          proxy_set_header Host $host;
+          proxy_set_header X-Real-IP $remote_addr;
+          proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+          add_header X-Frame-Options "SAMEORIGIN" always;
+          add_header X-Content-Type-Options "nosniff" always;
+          add_header X-XSS-Protection "1; mode=block" always;
+          add_header Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https: http://localhost:4000; connect-src 'self' http://localhost:4000 https://www.googletagmanager.com https://www.google-analytics.com https://region1.google-analytics.com https://region2.google-analytics.com https://region3.google-analytics.com https://region4.google-analytics.com https://region5.google-analytics.com https://challenges.cloudflare.com https://api.seminarplan.app; frame-src 'self' https://challenges.cloudflare.com https://www.google.com https://kiberater.cmt.de; font-src 'self' data: https://fonts.gstatic.com; object-src 'none'; media-src 'self'; base-uri 'self'; form-action 'self';" always;
+          add_header Cache-Control "no-store";
+        '';
+      };
+      locations."/internal/" = {
+        proxyPass = "http://localhost:3000";
+        extraConfig = ''
+          proxy_set_header Host $host;
+          proxy_set_header X-Real-IP $remote_addr;
+          proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        '';
+      };
+    };
+  };
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
@@ -194,6 +226,7 @@
   };
 
   programs.fish.enable = true;
+  programs.zsh.enable = true;
 
   # Virtualisation
   virtualisation.libvirtd = {

@@ -39,7 +39,7 @@
   users.users.bytee = {
      isNormalUser = true;
      description = "Bytee";
-     shell = pkgs.fish;
+     shell = pkgs.zsh;
      extraGroups = [ "wheel" "video" "input" "networkmanager" "kvm" "libvirtd" "audio" "docker" "adbusers" "qemu-libvirtd" ];
   };
 

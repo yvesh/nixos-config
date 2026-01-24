@@ -62,6 +62,10 @@
      ryzenadj
      stress
      sass
+     sheldon
+     zoxide
+     bat
+     eza
 
      # Machine Learning
      # Nvidia
@@ -194,6 +198,7 @@
      pnpm
      bun
      yarn
+     fnm
      # pkgs.nodePackages."neovim" # Usually using npm set prefix ~/.npm-global instead
 
      ## PHP
