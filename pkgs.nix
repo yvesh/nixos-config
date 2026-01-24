@@ -191,6 +191,7 @@
      mongodb-compass
      antigravity-fhs
      code-cursor
+     opencode
 
      # Dev (Languages)
      ## Node

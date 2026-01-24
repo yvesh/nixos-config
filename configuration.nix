@@ -43,7 +43,7 @@
      extraGroups = [ "wheel" "video" "input" "networkmanager" "kvm" "libvirtd" "audio" "docker" "adbusers" "qemu-libvirtd" ];
   };
 
-  users.extraUsers.root.shell = pkgs.fish;
+  users.extraUsers.root.shell = pkgs.zsh;
 
   # Environment variables
   environment.variables.GTK_THEME = "Adwaita:dark";
