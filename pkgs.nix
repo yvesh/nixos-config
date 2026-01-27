@@ -66,6 +66,7 @@
      zoxide
      bat
      eza
+     matugen
 
      # Machine Learning
      # Nvidia
@@ -185,6 +186,7 @@
       ps.netifaces
       # ps.pydbus
       ps.dbus-python
+      ps.openpyxl
      ]))
      uv
      jetbrains.phpstorm
@@ -192,6 +194,8 @@
      antigravity-fhs
      code-cursor
      opencode
+     kdePackages.qt6ct
+     adw-gtk3
 
      # Dev (Languages)
      ## Node

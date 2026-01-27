@@ -117,7 +117,8 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-  services.displayManager.sddm.enable = true;
+  # services.displayManager.sddm.enable = true;
+  services.displayManager.gdm.enable = true;
   # services.xserver.displayManager.defaultSession = 'none+xmonad';
 
   # Configure keymap in X11
@@ -149,6 +150,9 @@
   services.xserver.windowManager.i3.enable = true;
 
   services.xserver.windowManager.bspwm.enable = true;
+  
+  # Dank Material Shell
+  programs.dms-shell.enable = true;
 
   # services.xserver.windowManager.qtile.enable = true;
   # services.xserver.windowManager.qtile.extraPackages = p: with p; [ qtile-extras ];

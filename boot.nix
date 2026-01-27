@@ -11,9 +11,9 @@
   # boot.zfs.requestEncryptionCredentials = true;
   # boot.zfs.extraPools = [ "zpool" ];
 
-  boot.kernelPackages = pkgs.linuxPackages_zen;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+  # boot.kernelPackages = pkgs.linuxPackages_zen;
   # boot.kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;
-
   # boot.zfs.package = pkgs.zfs_unstable;
 
   # Not needed for desktop
@@ -26,6 +26,8 @@
   # 3D Accel
   hardware.graphics.enable = true;
   hardware.enableRedistributableFirmware = true;
+
+  hardware.sensor.iio.enable = false;
 
   # TODO move to machine
    hardware.graphics.extraPackages = with pkgs; [
