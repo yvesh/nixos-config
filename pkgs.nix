@@ -67,6 +67,7 @@
      bat
      eza
      matugen
+     libwebp # cwebp
 
      # Machine Learning
      # Nvidia
@@ -100,6 +101,7 @@
      # cava  # broken - 2024-11-16
      # awscli2 # broken - 2024-12-28
      iftop
+     iptraf-ng
      rcm
      libvterm
      libvterm-neovim
